@@ -4,7 +4,7 @@
 <template>
     <nav class="navbar bg-body-tertiary fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Rick and Morty Characters</a>
+            <RouterLink class="navbar-brand" to="/">Rick and morty</RouterLink>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -22,7 +22,7 @@
             >
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                        Offcanvas
+                        Rick and Morty
                     </h5>
                     <button
                         type="button"
@@ -34,15 +34,17 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a
+                            <RouterLink
                                 class="nav-link active"
                                 aria-current="page"
-                                href="#"
-                                >Home</a
+                                to="/"
+                                >Home</RouterLink
                             >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/about">Link</a>
+                            <RouterLink class="nav-link" to="/about"
+                                >About</RouterLink
+                            >
                         </li>
                     </ul>
                 </div>

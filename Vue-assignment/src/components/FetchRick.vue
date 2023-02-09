@@ -1,7 +1,7 @@
 <template>
     <div class="flex-container">
         <button @click="fetchCharacters" class="knappen">
-            Fetch Characters
+            Fetch Characters (clicked {{ counter }} times)
         </button>
         <div
             v-for="character in characters"
@@ -21,13 +21,16 @@
     export default {
         data() {
             return {
-                characters: []
+                characters: [],
+                counter: 0
             }
         },
         methods: {
             async fetchCharacters() {
+                this.counter++
+                const page = Math.floor(Math.random() * 25) + 1
                 const response = await fetch(
-                    'https://rickandmortyapi.com/api/character?limit=10'
+                    `https://rickandmortyapi.com/api/character?limit=10&page=${page}`
                 )
                 const data = await response.json()
                 this.characters = data.results
@@ -56,5 +59,6 @@
         border: 1px solid black;
         align-self: center;
         margin: 0.5rem;
+        color: white;
     }
 </style>

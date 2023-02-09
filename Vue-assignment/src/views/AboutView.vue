@@ -1,19 +1,9 @@
-<template>
-    <div class="about">
-        <h1>This is an about page</h1>
-    </div>
-</template>
+<script setup>
+    import InputName from '../components/InputName.vue'
+    import ButtonProp from '../components/ButtonProp.vue'
+</script>
 
-<style>
-    .about {
-        margin-top: 6rem;
-        text-align: center;
-    }
-    @media (min-width: 1024px) {
-        .about {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-    }
-</style>
+<template>
+    <InputName />
+    <ButtonProp start="10" />
+</template>
